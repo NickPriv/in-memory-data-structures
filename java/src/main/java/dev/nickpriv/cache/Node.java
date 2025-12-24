@@ -1,4 +1,4 @@
-package dev.nickpriv.lru;
+package dev.nickpriv.cache;
 
 import lombok.Data;
 import lombok.NonNull;

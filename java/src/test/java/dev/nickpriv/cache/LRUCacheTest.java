@@ -1,10 +1,9 @@
-package dev.nickpriv.lru;
+package dev.nickpriv.cache;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class LRUCacheTest {
 
@@ -55,25 +54,5 @@ public class LRUCacheTest {
         assertEquals(10, cache.get(1), "Expected value 10 for key 1");
         assertEquals(-1, cache.get(2), "Expected -1 for evicted key 2");
         assertEquals(30, cache.get(3), "Expected value 30 for key 3");
-    }
-
-    @Test
-    void testLRUCacheConstructorNonNull() {
-        assertThrows(NullPointerException.class, () -> new LRUCache(null));
-    }
-
-    @Test
-    void testGetNonNull() {
-        assertThrows(NullPointerException.class, () -> cache.get(null));
-    }
-
-    @Test
-    void testPutNonNullKey() {
-        assertThrows(NullPointerException.class, () -> cache.put(null, 1));
-    }
-
-    @Test
-    void testPutNonNullValue() {
-        assertThrows(NullPointerException.class, () -> cache.put(1, null));
     }
 }

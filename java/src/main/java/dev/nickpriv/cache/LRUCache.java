@@ -1,4 +1,4 @@
-package dev.nickpriv.lru;
+package dev.nickpriv.cache;
 
 import lombok.NonNull;
 
@@ -8,11 +8,11 @@ import java.util.Map;
 public class LRUCache {
 
     final Map<Integer, Node> nodeForKey;
-    final Integer capacity;
+    final int capacity;
     final Node dummyHead;
     final Node dummyTail;
 
-    public LRUCache(@NonNull final Integer capacity) {
+    public LRUCache(final int capacity) {
         this.capacity = capacity;
         nodeForKey = new HashMap<>();
         dummyHead = new Node(-1, -1);
@@ -21,7 +21,7 @@ public class LRUCache {
         dummyTail.setPrev(dummyHead);
     }
 
-    public Integer get(@NonNull final Integer key) {
+    public int get(final int key) {
         if (!nodeForKey.containsKey(key)) {
             return -1;
         }
@@ -31,7 +31,7 @@ public class LRUCache {
         return node.getValue();
     }
 
-    public void put(@NonNull final Integer key, @NonNull final Integer value) {
+    public void put(final int key, final int value) {
         if (nodeForKey.containsKey(key)) {
             final Node node = nodeForKey.get(key);
             node.setValue(value);
