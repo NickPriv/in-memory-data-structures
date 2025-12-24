@@ -6,3 +6,4 @@
 
 ### Build Output ###
 build/
+.gradle/
