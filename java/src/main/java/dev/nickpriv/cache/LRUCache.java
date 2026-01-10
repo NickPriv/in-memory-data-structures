@@ -5,6 +5,12 @@ import lombok.NonNull;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * LRU (Least Recently Used) Cache implementation.
+ * Supports get and put operations in O(1) time complexity.
+ * When the cache reaches its capacity, it evicts the least recently used item.
+ * Get and put operations update the usage order of items.
+ */
 public class LRUCache {
 
     final Map<Integer, Node> nodeForKey;
