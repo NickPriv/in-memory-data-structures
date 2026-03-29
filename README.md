@@ -4,5 +4,6 @@ This project implements various in-memory data structures. The following data st
 - Caches
     - LRU Cache (Java)
     - LRU Cache with TTL (Java)
+    - Time-Based Cache (Java)
 - Stacks
     - Min Stack (Java)
